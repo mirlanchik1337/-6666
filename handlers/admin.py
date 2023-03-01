@@ -1,10 +1,10 @@
 from aiogram import types, Dispatcher
 from config import bot, dp
-from config import ADMINS
+from config import ADMIN
 
 async def ban(message: types.Message):
     if message.chat.type != 'private':
-        if message.from_user.id not in ADMINS:
+        if message.from_user.id not in ADMIN:
             await message.answer('Ты не мой босс')
         elif not message.reply_to_message:
             await message.answer('Команда должна быть ответом на смс!')
